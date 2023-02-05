@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: olskor <olskor@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jauffret <jauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 13:15:34 by jauffret          #+#    #+#             */
-/*   Updated: 2023/02/04 20:50:28 by olskor           ###   ########.fr       */
+/*   Updated: 2023/02/05 17:32:47 by jauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static char	*alloc_str(char const *s, unsigned int start, size_t len)
 			j++;
 		i++;
 	}
-	str = malloc(j + 1);
+	str = (char *)malloc(j + 1);
 	return (str);
 }
 

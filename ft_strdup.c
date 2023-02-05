@@ -6,7 +6,7 @@
 /*   By: jauffret <jauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 13:29:14 by jauffret          #+#    #+#             */
-/*   Updated: 2023/02/04 18:39:01 by jauffret         ###   ########.fr       */
+/*   Updated: 2023/02/05 17:32:06 by jauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strdup(const char *s)
 	size_t	i;
 	char	*tab;
 
-	tab = malloc(ft_strlen(s) + 1);
+	tab = (char *)malloc(ft_strlen(s) + 1);
 	i = 0;
 	if (!tab)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: jauffret <jauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 13:25:06 by jauffret          #+#    #+#             */
-/*   Updated: 2023/02/04 18:33:53 by jauffret         ###   ########.fr       */
+/*   Updated: 2023/02/05 17:33:03 by jauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,17 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t	i;
-	char	*tab;
+	void	*tab;
+	size_t	len;
 
-	if (nmemb > sizeof(long long))
+	len = size * nmemb;
+	if (size == 0 || nmemb == 0)
+		return ((void *)malloc(0));
+	if (len / size != nmemb || len / nmemb != size)
 		return (NULL);
-	tab = malloc(size * nmemb);
-	i = 0;
+	tab = (void *)malloc(len);
 	if (!tab)
 		return (NULL);
-	while (i < size * nmemb)
-	{
-		tab[i] = 0;
-		i++;
-	}
+	ft_bzero(tab, nmemb);
 	return (tab);
 }

@@ -6,7 +6,7 @@
 /*   By: jauffret <jauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 11:32:49 by jauffret          #+#    #+#             */
-/*   Updated: 2023/02/05 12:43:50 by jauffret         ###   ########.fr       */
+/*   Updated: 2023/02/05 14:18:18 by jauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*ret;
 
-	if (!content)
-		return (NULL);
 	ret = (t_list *)malloc(sizeof(*ret));
 	if (!ret)
 		return (NULL);

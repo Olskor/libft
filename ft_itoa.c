@@ -6,7 +6,7 @@
 /*   By: jauffret <jauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 16:23:16 by jauffret          #+#    #+#             */
-/*   Updated: 2023/02/05 11:07:43 by jauffret         ###   ########.fr       */
+/*   Updated: 2023/02/05 16:38:48 by jauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_itoa(int nbr)
 	int		len;
 
 	len = nbrlength(nbr);
-	str = ft_calloc(sizeof(char), len + 1);
+	str = ft_calloc(len + 1, sizeof(char));
 	if (!str)
 		return (NULL);
 	while (nbr >= 10 || nbr <= -10)

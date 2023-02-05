@@ -6,7 +6,7 @@
 /*   By: jauffret <jauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 12:15:40 by jauffret          #+#    #+#             */
-/*   Updated: 2023/02/04 17:59:35 by jauffret         ###   ########.fr       */
+/*   Updated: 2023/02/05 14:06:38 by jauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@ void	*ft_memmove(void *dest, const void *src, int n)
 	char	*dst;
 	char	*str;
 
+	if (!dest && !src)
+		return (0);
 	str = (char *)src;
 	dst = (char *)dest;
 	if (src > dest)
@@ -26,14 +28,12 @@ void	*ft_memmove(void *dest, const void *src, int n)
 			dst++;
 			str++;
 		}
+		return (dest);
 	}
-	else
+	while (n > 0)
 	{
-		while (n > 0)
-		{
-			n--;
-			*(dst + n) = *(str + n);
-		}
+		n--;
+		*(dst + n) = *(str + n);
 	}
 	return (dest);
 }

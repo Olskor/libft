@@ -6,7 +6,7 @@
 /*   By: jauffret <jauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 12:43:22 by jauffret          #+#    #+#             */
-/*   Updated: 2023/02/03 15:39:02 by jauffret         ###   ########.fr       */
+/*   Updated: 2023/02/05 14:01:07 by jauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 int	ft_isascii(int c)
 {
-	unsigned char	cchar;
-
-	cchar = (unsigned char) c;
-	if (cchar <= 127)
+	if (c >= 0 && c <= 127)
 		return (1);
 	return (0);
 }

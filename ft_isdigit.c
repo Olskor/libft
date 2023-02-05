@@ -6,7 +6,7 @@
 /*   By: jauffret <jauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 12:42:27 by jauffret          #+#    #+#             */
-/*   Updated: 2023/02/03 14:44:15 by jauffret         ###   ########.fr       */
+/*   Updated: 2023/02/05 14:01:21 by jauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 int	ft_isdigit(int c)
 {
-	unsigned char	cchar;
-
-	cchar = (unsigned char) c;
-	if (cchar >= '0' && cchar <= '9')
+	if (c >= '0' && c <= '9')
 		return (2048);
 	return (0);
 }

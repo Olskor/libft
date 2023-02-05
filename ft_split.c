@@ -6,7 +6,7 @@
 /*   By: jauffret <jauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 17:10:27 by jauffret          #+#    #+#             */
-/*   Updated: 2023/02/05 11:26:21 by jauffret         ###   ########.fr       */
+/*   Updated: 2023/02/05 17:31:52 by jauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ static void	*write_split(char **split, char *str, char sep)
 		j = 0;
 		while (char_is_separator(str[i + j], sep) == 0)
 			j++;
-		split[word] = malloc(j + 1);
+		split[word] = (char *)malloc(j + 1);
 		if (!split[word])
 		{
 			while (word > 0)
@@ -89,7 +89,7 @@ char	**ft_split(const char *s, char c)
 		return (NULL);
 	str = (char *)s;
 	words = count_words(str, c);
-	res = malloc(sizeof(char *) * (words + 1));
+	res = (char **)malloc(sizeof(char *) * (words + 1));
 	if (!res)
 		return (NULL);
 	res[words] = 0;

@@ -6,7 +6,7 @@
 /*   By: jauffret <jauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 16:36:26 by jauffret          #+#    #+#             */
-/*   Updated: 2023/02/05 11:17:58 by jauffret         ###   ########.fr       */
+/*   Updated: 2023/02/06 15:00:15 by jauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*rst;
 	int		i;
 
+	if (!s || !f)
+		return (0);
 	rst = ft_strdup(s);
-	if (!s || !f || !rst)
+	if (!rst)
 		return (NULL);
 	i = 0;
 	while (s[i])

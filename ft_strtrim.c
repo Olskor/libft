@@ -6,7 +6,7 @@
 /*   By: jauffret <jauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 14:13:56 by jauffret          #+#    #+#             */
-/*   Updated: 2023/02/05 17:32:38 by jauffret         ###   ########.fr       */
+/*   Updated: 2023/02/06 14:52:01 by jauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	end;
 
 	start = 0;
+	if (!s1)
+		return (0);
 	while (s1[start] && is_char(s1[start], set))
 		start++;
 	end = ft_strlen(s1);

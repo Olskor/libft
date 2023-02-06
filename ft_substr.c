@@ -6,7 +6,7 @@
 /*   By: jauffret <jauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 13:15:34 by jauffret          #+#    #+#             */
-/*   Updated: 2023/02/05 17:32:47 by jauffret         ###   ########.fr       */
+/*   Updated: 2023/02/06 14:49:26 by jauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	j = 0;
+	if (!s)
+		return (0);
 	str = alloc_str(s, start, len);
 	if (!str)
 		return (0);

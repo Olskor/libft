@@ -6,7 +6,7 @@
 /*   By: jauffret <jauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 15:06:38 by jauffret          #+#    #+#             */
-/*   Updated: 2023/02/06 18:08:54 by jauffret         ###   ########.fr       */
+/*   Updated: 2023/02/06 18:16:16 by jauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	j;
 
 	i = 0;
-	if ((!big && len == 0) || ft_strlen(little) > len)
+	if (!big && len == 0)
 		return (NULL);
 	if (!little[0])
 		return ((char *)big);
-	if (ft_strlen(big) < ft_strlen(little))
+	if (ft_strlen(big) < ft_strlen(little) > len)
 		return (0);
 	while (big[i])
 	{

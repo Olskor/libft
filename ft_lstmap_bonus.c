@@ -6,7 +6,7 @@
 /*   By: jauffret <jauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 12:00:46 by jauffret          #+#    #+#             */
-/*   Updated: 2023/02/06 10:33:17 by jauffret         ###   ########.fr       */
+/*   Updated: 2023/02/06 18:24:38 by jauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			{
 				new = first->next;
 				(*del)(first->content);
+				free(first->content);
 				free(first);
 				first = new;
 			}

@@ -6,34 +6,43 @@
 /*   By: jauffret <jauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 12:00:46 by jauffret          #+#    #+#             */
-/*   Updated: 2023/02/06 18:24:38 by jauffret         ###   ########.fr       */
+/*   Updated: 2023/02/06 18:34:33 by jauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static void	lst_del(t_list *first, void *(*f)(void *), void (*del)(void *))
+{
+	t_list	*new;
+
+	while (first)
+	{
+		new = first->next;
+		(*del)(first->content);
+		free(first);
+		first = new;
+	}
+}
+
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*first;
 	t_list	*new;
+	void	*temp;
 
 	if (!f || !del)
 		return (NULL);
 	first = NULL;
 	while (lst)
 	{
-		new = ft_lstnew((*f)(lst->content));
+		temp = (*f)(lst->content);
+		new = ft_lstnew(temp);
 		if (!new)
 		{
-			while (first)
-			{
-				new = first->next;
-				(*del)(first->content);
-				free(first->content);
-				free(first);
-				first = new;
-			}
+			lst_del(first, f, del);
 			lst = NULL;
+			del (temp);
 			return (NULL);
 		}
 		ft_lstadd_back(&first, new);

@@ -6,7 +6,7 @@
 /*   By: jauffret <jauffret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 17:10:27 by jauffret          #+#    #+#             */
-/*   Updated: 2023/02/05 17:31:52 by jauffret         ###   ########.fr       */
+/*   Updated: 2023/02/06 15:52:40 by jauffret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ static void	*write_split(char **split, char *str, char sep)
 		{
 			while (word > 0)
 				free(split[--word]);
+			free(split);
 			return (NULL);
 		}
 		i += j + write_word(split[word], str + i, sep);
